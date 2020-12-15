@@ -20,8 +20,7 @@ services:
             context: ./nodewebapp
         container_name: nodewebapp
         command: node server.js
-        # ports:
-        #     - 8080:80
+        
         
 
 
