@@ -11,6 +11,8 @@ services:
         volumes:
             - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
             - ./reverse_proxy/conf.d:/etc/nginx/conf.d/
+            - ./reverse_proxy/htpasswd:/etc/nginx/.htpasswd
+
 
     nodewebapp:
         image: matredmo/node-webapp
@@ -18,8 +20,8 @@ services:
             context: ./nodewebapp
         container_name: nodewebapp
         command: node server.js
-        ports:
-            - 8080:80
+        # ports:
+        #     - 8080:80
         
 
 
